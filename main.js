@@ -1,29 +1,34 @@
+// textarea, css, alerts,
 const btn = document.querySelector("#btn");
 let num = document.querySelector("#number");
 let result = document.querySelector("#result");
 
-const testNum = 15
-num.innerHTML = testNum
-
-function convert() {
-  let res = 0
-  const numbers = [
-    [2], // 1
-    [2*2], // 4
-    [2*2*2], // 8
-    [2*2*2*2], // 16
-  ]
-  // loop through the array
-  for (let i = 0; i < numbers.length; i++) {
-    // check if the current number is even
-    if (numbers[i] % 2 === 0) {
-      // add it to the sum
-      res += "1";
-    } else if (numbers[i] % 2 === 1) {
-      res += "0";
-    }
-  }
-  return console.log(result.innerHTML = res)
+// convert to binary
+function decConvert() {
+  const number = parseInt(prompt("Enter a decimal number: "));
+  result = (number >>> 0).toString(2);
+  return console.log(result);
 }
 
-btn.addEventListener('click', convert)
+btn.addEventListener("click", decConvert);
+
+/* Valid number systems for conversion include:
+
+    Binary system (base 2) that has 2 digits, 0 and 1
+    Ternary system (base 3) that has 3 digits 0, 1, and 2
+    Quaternary system (base 4) that has 4 digits, 0, 1, 2 and 3
+    And so on up to the Hexatridecimal system (base 36) that has the combination of 
+    Arabic numerals 0 to 9 and Latin letters A to Z */
+
+// convert to ternary
+function dec2Tern() {
+  const number = parseInt(prompt("Enter a decimal number: ")); // to html input
+  result = (number >>> 0).toString(3);
+  return console.log(result);
+}
+
+function dec2Quat() {
+  const number = parseInt(prompt("Enter a decimal number: ")); // to html input
+  result = (number >>> 0).toString(4);
+  return console.log(result);
+}
